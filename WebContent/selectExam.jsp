@@ -17,7 +17,7 @@
 <body>
 <%
 		String userID = (String) session.getAttribute("userid");
-	if (userID == null) {
+	if (userID == null ) {
 		response.sendRedirect("index.jsp");
 	}
 	%>

@@ -5,4 +5,9 @@
   <servlet-class>com.vimal.exam</servlet-class>
   </servlet>
   
+  <error-page>
+    <error-code> 404 </error-code>
+    <location>/404-Error.jsp</location>
+</error-page>
+  
 </web-app>

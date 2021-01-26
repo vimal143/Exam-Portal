@@ -13,38 +13,13 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>Instruction</title>
-<style>
-#calc input {
-	width: 40px;
-	height: 40px;
-	margin: 2px;
-	border-radius: 10px;
-}
 
-input {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border-radius: 50%;
-	width: 16px;
-	height: 16px;
-	border: 2px solid #999;
-	transition: 0.2s all linear;
-	margin-right: 5px;
-	position: relative;
-	top: 4px;
-}
 
-input:checked {
-	border: 6px solid blue;
-	outline: unset !important
-		/* I added this one for Edge (chromium) support */
-}
-</style>
 </head>
 <body>
 	<%
 		String userID = (String) session.getAttribute("userid");
+
 	if (userID == null) {
 		response.sendRedirect("index.jsp");
 	}
@@ -68,8 +43,20 @@ input:checked {
 	</div>
 
 	<div class="container-fluid  mt-3 p-2">
+	<div class="row ml-5">
+	    <div class="col-md-4">
+	  <h5>Exam: ${details.examName }</h5>  
+	    </div>
+	      <div class="col-md-4">
+	  <h5>Exam Start: ${details.examTime }</h5>  
+	    </div>
+	    <div class="col-md-4">
+	  <h5>Duration: ${details.examDuration }</h5>  
+	    </div>
+	      
+	</div>
 		<p>
-		<h1>${details.examID }</h1>
+		
 		<h4>A. General information:</h4>
 		
 		
@@ -93,9 +80,12 @@ input:checked {
 			options, and the candidate has to click the appropriate option.</p>
 
 	</div>
-
        <div align="center">
-       <a class="btn btn-primary" href="exam.jsp" role="button">Start Exam</a>
+       <form method="post" action="FetchQuestions">
+       <input type="hidden"  name="examname" value="${details.examName }"/>
+       <input class="btn btn-primary" type="submit" value="Start" style="width:100px">
+       </form>
+       
            
        </div>
 	<script>

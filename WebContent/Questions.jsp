@@ -37,11 +37,14 @@ box-sizing: border-box;
 <%@include file="navbar.jsp" %>
 
 <%
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+
 String userID=(String)session.getAttribute("userid");
 if(userID==null){
 	response.sendRedirect("admin.jsp");
 }
 %>
+
 <div class="row">
   <div class="column" style="background-color:#aaa;">
   <div class="container  bg-secondary  border p-5 ">

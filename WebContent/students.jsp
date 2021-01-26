@@ -18,6 +18,10 @@
 <body>
 <%@include file="navbar.jsp" %>
 <%
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+
+//response.setHeader("pragma","no-cache");     //HTTP 1.0
+// response.setHeader("Expires","0")    //proxies
 String userID=(String)session.getAttribute("userid");
 if(userID==null){
 	response.sendRedirect("admin.jsp");
