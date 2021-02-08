@@ -16,24 +16,25 @@
 <link href="style/index.css" rel="stylesheet">
 <title>Axis Online Exam Portal</title>
 </head>
-<body >
+<body>
 	<!-- Image and text -->
 	<nav class="navbar navbar-light   border">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#"> <img src="assets/Axis_Logo.png"
 				alt="" width="55" height="44" class="d-inline-block align-top">
-				<span class="site-title">Axis Exam Portal</span>
+				<span class="site-title text-light">Axis Exam Portal</span>
 			</a>
 		</div>
 	</nav>
 	<!--Form Starts Here-->
-	<div class="container mt-5 bg-light w-50 border p-5 " align="center">
+	<div class="container mt-5 bg-light w-50 border p-5 forms"
+		align="center">
 		<fieldset>
 			<legend class="pt-3 pb-3 text-center">
-				<span class="h3 text-uppercase ">Sign In</span>
-				
+				<span class="h3 text-uppercase text-light">Sign In</span>
+
 			</legend>
-			<span class="text-info">${message }</span>
+			<span class="text-danger">${message }</span>
 		</fieldset>
 		<form action="login" method="post">
 			<div class="row mb-3 mt-3">
@@ -48,13 +49,14 @@
 					<input type="password" class="form-control"
 						placeholder="ENTER PASSWORD" name="password" required>
 				</div>
-				</div>
-				<div class="row mb-3">
+			</div>
+			<div class="row mb-3">
 				<div class="col-sm-13  ">
-					<input type="submit" class="bg-primary form-control lgnbtn  text-uppercase"
+					<input type="submit"
+						class="bg-primary form-control lgnbtn  text-uppercase"
 						value="Sign In">
 				</div>
-				</div>
+			</div>
 		</form>
 
 		<div class="flex mx-auto  mt-2">
@@ -68,17 +70,17 @@
 		</div>
 
 
-	
-	<button type="button" class="btn btn-info  btn-lg mt-3 ">
-		<i class="fa fa-google"></i> &nbsp; <span class="gbtn">Sign In
-			With Google</span>
-	</button>
-	<div class="mt-3">
-		<p class="presignup-text " >
-			Don't have an account ? <span class="signupNow"><a
-				href="signup.jsp">Sign Up</a></span>
-		</p>
-	</div>
+
+		<button type="button" class="btn btn-info  btn-lg mt-3 ">
+			<i class="fa fa-google"></i> &nbsp; <span class="gbtn lgn">Sign
+				In With Google</span>
+		</button>
+		<div class="mt-3">
+			<p class="presignup-text ">
+				Don't have an account ? <span class="signupNow"><a
+					href="signup.jsp">Sign Up</a></span>
+			</p>
+		</div>
 
 	</div>
 	<script

@@ -42,7 +42,7 @@ public class login extends HttpServlet {
 		String password = request.getParameter("password");
 		loginManager lgn = new loginManager();
 		boolean tf = lgn.fetchdata(email, password);
-		HttpSession session=request.getSession();
+		HttpSession session = request.getSession();
 		if (tf) {
 			session.setAttribute("userid", email);
 			request.getRequestDispatcher("/selectExam.jsp").forward(request, response);

@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 public class scheduleDAO {
 	private String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String dbUserName = "system";
@@ -28,7 +29,7 @@ public class scheduleDAO {
 		return con;
 	}
 
-	public String insert(String examID,String examName,String examDate,String examTime,String examDuration) {
+	public String insert(String examID, String examName, String examDate, String examTime, String examDuration) {
 		loadJDBCDriver(dbDriver);
 		Connection conn = getConnection();
 		String verify = "DI";

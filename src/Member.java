@@ -1,49 +1,49 @@
 
 public class Member {
-  private String firstName,lastName,email,password;
+	private String firstName, lastName, email, password;
 
-public Member() {
-	super();
-}
+	public Member() {
+		super();
+	}
 
-public Member(String firstName, String lastName, String email, String password) {
-	super();
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.email = email;
-	this.password = password;
-}
+	public Member(String firstName, String lastName, String email, String password) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+	}
 
-public String getFirstName() {
-	return firstName;
-}
+	public String getFirstName() {
+		return firstName;
+	}
 
-public void setFirstName(String firstName) {
-	this.firstName = firstName;
-}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-public String getLastName() {
-	return lastName;
-}
+	public String getLastName() {
+		return lastName;
+	}
 
-public void setLastName(String lastName) {
-	this.lastName = lastName;
-}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-public String getEmail() {
-	return email;
-}
+	public String getEmail() {
+		return email;
+	}
 
-public void setEmail(String email) {
-	this.email = email;
-}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-public String getPassword() {
-	return password;
-}
+	public String getPassword() {
+		return password;
+	}
 
-public void setPassword(String password) {
-	this.password = password;
-}
-  
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }

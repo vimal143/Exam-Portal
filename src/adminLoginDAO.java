@@ -40,8 +40,8 @@ public class adminLoginDAO {
 			ps.setString(1, email);
 			ps.setString(2, pass);
 			ResultSet resultset = ps.executeQuery();
-            check=resultset.next();
-		
+			check = resultset.next();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			check = false;

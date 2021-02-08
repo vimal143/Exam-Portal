@@ -9,32 +9,36 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/adminlogin")
 public class adminlogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public adminlogin() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public adminlogin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String adminUserID=request.getParameter("admin_email");
-		String adminPassword=request.getParameter("admin_password");
-		adminLoginDAO dao=new adminLoginDAO();
-		HttpSession session=request.getSession();
-		boolean check=dao.fetchdata(adminUserID, adminPassword);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String adminUserID = request.getParameter("admin_email");
+		String adminPassword = request.getParameter("admin_password");
+		adminLoginDAO dao = new adminLoginDAO();
+		HttpSession session = request.getSession();
+		boolean check = dao.fetchdata(adminUserID, adminPassword);
 		if (check) {
 			session.setAttribute("userid", adminUserID);
 			request.getRequestDispatcher("adminHome.jsp").forward(request, response);
@@ -42,9 +46,7 @@ public class adminlogin extends HttpServlet {
 			request.setAttribute("message", "Username or Password is incorrect");
 			request.getRequestDispatcher("admin.jsp").forward(request, response);
 		}
-		
-		
+
 	}
 
 }
-

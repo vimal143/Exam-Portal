@@ -17,7 +17,7 @@
 <link href="style/index.css" rel="stylesheet">
 <title>Axis Online Exam Portal</title>
 </head>
-<body >
+<body>
 	<!-- Image and text -->
 	<nav class="navbar navbar-light border">
 		<div class="container-fluid">
@@ -27,15 +27,15 @@
 			</a>
 		</div>
 	</nav>
-	
-         
+
+
 	<!--Form Starts Here-->
 	<div class="container mt-5 bg-light w-50 border p-5 " align="center">
 
 		<fieldset>
 			<legend class="pt-3 pb-3 text-center">
-				<span class="h3 text-uppercase">Sign Up</span><br>
-				<span style="color:red;font-size:14px">${message }</span>
+				<span class="h3 text-uppercase">Sign Up</span><br> <span
+					style="color: red; font-size: 14px">${message }</span>
 				<div class="flex mx-auto clearboth mt-2">
 					<div
 						class="border bg-light position-relative top4 width100 float-left"></div>
@@ -48,45 +48,46 @@
 			</legend>
 		</fieldset>
 		<form class="row g-3" action="regsiter" method="post">
-		<div class="col-md-6">
+			<div class="col-md-6">
 
-			<input type="text" class="form-control" id="inputname1" name="fname"
-				placeholder="FIRST NAME" required>
-		</div>
-		<div class="col-md-6">
+				<input type="text" class="form-control" id="inputname1" name="fname"
+					placeholder="FIRST NAME" required>
+			</div>
+			<div class="col-md-6">
 
-			<input type="text" class="form-control" id="inputname2" name="lname"
-				placeholder="LAST NAME" required>
-		</div>
-		<div class="col-12">
+				<input type="text" class="form-control" id="inputname2" name="lname"
+					placeholder="LAST NAME" required>
+			</div>
+			<div class="col-12">
 
-			<input type="email" class="form-control" id="inputEmail" name="email"
-				placeholder="ENTER YOUR EMAIL" required>
-		</div>
-		<div class="col-12">
+				<input type="email" class="form-control" id="inputEmail"
+					name="email" placeholder="ENTER YOUR EMAIL" required>
+			</div>
+			<div class="col-12">
 
-			<input type="password" class="form-control" name="password1"
-				placeholder="ENTER YOUR PASSWORD" required>
-		</div>
-		<div class="col-12">
+				<input type="password" class="form-control" name="password1"
+					placeholder="ENTER YOUR PASSWORD" required>
+			</div>
+			<div class="col-12">
 
-			<input type="password" class="form-control" name="password2"
-				placeholder="RE-ENTER YOUR PASSWORD" required>
-		</div>
-		<div class="col-md-6">
-			<div class="g-recaptcha"
-				data-sitekey="6LcrgRoaAAAAAF6XyqGklV7dJOIFEvzw_ss3Q1Gd"></div>
-		</div>
-		
-		<input type="submit" class="bg-primary form-control lgnbtn text-uppercase"
-			value="Sign Up">
+				<input type="password" class="form-control" name="password2"
+					placeholder="RE-ENTER YOUR PASSWORD" required>
+			</div>
+			<div class="col-md-6">
+				<div class="g-recaptcha"
+					data-sitekey="6LcrgRoaAAAAAF6XyqGklV7dJOIFEvzw_ss3Q1Gd"></div>
+			</div>
 
-		<div class="mt-3">
-			<p class="presignup-text">
-				Already have an account ? <span class="signupNow "><a
-					href="index.jsp">Sign In</a></span>
-			</p>
-		</div>
+			<input type="submit"
+				class="bg-primary form-control lgnbtn text-uppercase"
+				value="Sign Up">
+
+			<div class="mt-3">
+				<p class="presignup-text">
+					Already have an account ? <span class="signupNow "><a
+						href="index.jsp">Sign In</a></span>
+				</p>
+			</div>
 		</form>
 	</div>
 	<script

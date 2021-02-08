@@ -45,18 +45,16 @@ public class FetchQuestions extends HttpServlet {
 		String nextquest = " ";
 		String selectedOpt = request.getParameter("radio");
 		String ans = request.getParameter("answer");
-		String[] questno = { "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10" ,"Q11"};
+		String[] questno = { "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11" };
 		FetchDAO fd = new FetchDAO();
 		if ("Save & next".equals(Button)) {
 			String id = (String) request.getParameter("nextid");
-			
+
 			if (!id.replace(" ", "").equals("Q10")) {
 				if (ans.replace(" ", "").equals(selectedOpt.replace(" ", ""))) {
 					Result result = new Result();
 					result.addMarks(username.replace("  ", ""), examName, 1);
 				}
-				
-				
 
 				for (int i = 0; i < 10; i++) {
 					if (id.replace("  ", "").equals(questno[i])) {
@@ -68,7 +66,7 @@ public class FetchQuestions extends HttpServlet {
 
 			}
 			System.out.println(id.replace(" ", "").equals("Q10"));
-			if(id.replace(" ", "").equals("Q10")) {
+			if (id.replace(" ", "").equals("Q10")) {
 				if (ans.replace(" ", "").equals(selectedOpt.replace(" ", ""))) {
 					Result result = new Result();
 					result.addMarks(username.replace("  ", ""), examName, 1);
@@ -76,7 +74,7 @@ public class FetchQuestions extends HttpServlet {
 				request.setAttribute("exname", examName);
 				request.setAttribute("stdid", username);
 				request.getRequestDispatcher("/Result.jsp").forward(request, response);
-				
+
 			}
 
 			FetchNextQuest fnq = new FetchNextQuest();

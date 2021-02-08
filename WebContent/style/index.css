@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
 
 body{
-	background: #51E1ED;
+	 background: linear-gradient(57deg, #00C6A7 , #1E4D92 ); 
+}
+.forms{
+	background: linear-gradient(57deg, #D16BA5 , #86A8E7,#5FFBF1 ); 
 }
 .site-title{
 	font-family: 'Merriweather', serif;
@@ -10,7 +13,7 @@ body{
 	margin-left:20px;
 }
 .navbar{
-	background-image: linear-gradient(#FED54A, #FF9347);
+	 background: linear-gradient(57deg, #00C6A7 , #1E4D92 ); 
 }
 .signupNow{
 	font-size:14px;
@@ -27,6 +30,10 @@ a:hover{
 	color:white;
 }
 .lgnbtn{
+	background: linear-gradient(57deg, #00C6A7 , #1E4D92 ); 
 	color:white;
 	font-size:20px;
+}
+.lgnbtn:hover{
+	background: linear-gradient(57deg, #1E4D92, #00C6A7 ); 
 }

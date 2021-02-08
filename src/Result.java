@@ -26,21 +26,20 @@ public class Result {
 		return con;
 	}
 
-	public boolean addMarks(String userid,String examname,int marks) {
+	public boolean addMarks(String userid, String examname, int marks) {
 		loadJDBCDriver(dbDriver);
-		String sql="";
+		String sql = "";
 		boolean check = false;
 		Connection conn = getConnection();
-	   sql = "Insert into system.examresult values(?,?,?)";
+		sql = "Insert into system.examresult values(?,?,?)";
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1,userid);
+			ps.setString(1, userid);
 			ps.setString(2, examname);
 			ps.setInt(3, marks);
 			ResultSet resultset = ps.executeQuery();
-            check=resultset.next();    	
-             
-		
+			check = resultset.next();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			check = false;
@@ -49,7 +48,5 @@ public class Result {
 		return check;
 
 	}
-	
-	
 
 }

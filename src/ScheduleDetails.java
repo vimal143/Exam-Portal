@@ -1,6 +1,6 @@
 
 public class ScheduleDetails {
-	private String examID,examName,examDate,examTime,examDuration;
+	private String examID, examName, examDate, examTime, examDuration;
 
 	public ScheduleDetails() {
 		super();
@@ -54,5 +54,5 @@ public class ScheduleDetails {
 	public void setExamDuration(String examDuration) {
 		this.examDuration = examDuration;
 	}
-	
+
 }

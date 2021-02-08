@@ -28,29 +28,30 @@ public class FetchNextQuest {
 		return con;
 	}
 
-	public boolean fetchnextquest(String q,String examname) {
+	public boolean fetchnextquest(String q, String examname) {
 		loadJDBCDriver(dbDriver);
-		//System.out.println(q);    //Value is "Q2"
+		// System.out.println(q); //Value is "Q2"
 		boolean check = false;
 		Connection conn = getConnection();
-		
-		String sql="Select * from system.javaquestions where QUESTID='"+q+"' ";
-		//String sql ="Select * from system.dbmsquestions where QUESTID='Q2'";    //This way its Working
-	
+
+		String sql = "Select * from system.javaquestions where QUESTID='" + q + "' ";
+		// String sql ="Select * from system.dbmsquestions where QUESTID='Q2'"; //This
+		// way its Working
+
 		try {
-			
+
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet resultset = ps.executeQuery();
-            check=resultset.next();   
-            
-            nextquestion.add(resultset.getString("questid"));
-            nextquestion.add(resultset.getString("Question"));
-            nextquestion.add(resultset.getString("option1"));
-            nextquestion.add(resultset.getString("option2"));
-            nextquestion.add(resultset.getString("option3"));
-            nextquestion.add(resultset.getString("option4"));
-            nextquestion.add(resultset.getString("answer"));          
-		
+			check = resultset.next();
+
+			nextquestion.add(resultset.getString("questid"));
+			nextquestion.add(resultset.getString("Question"));
+			nextquestion.add(resultset.getString("option1"));
+			nextquestion.add(resultset.getString("option2"));
+			nextquestion.add(resultset.getString("option3"));
+			nextquestion.add(resultset.getString("option4"));
+			nextquestion.add(resultset.getString("answer"));
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			check = false;

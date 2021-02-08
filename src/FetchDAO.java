@@ -34,28 +34,27 @@ public class FetchDAO {
 
 	public boolean fetchdata(String examname) {
 		loadJDBCDriver(dbDriver);
-		String sql="";
+		String sql = "";
 		boolean check = false;
 		Connection conn = getConnection();
-		if(examname.equals("Java")) {
-			 sql = "select * from system.javaquestions";
-		}
-		else if(examname.equals("DBMS")) {
+		if (examname.equals("Java")) {
+			sql = "select * from system.javaquestions";
+		} else if (examname.equals("DBMS")) {
 			sql = "select * from system.dbmsquestions";
 		}
-		
+
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet resultset = ps.executeQuery();
-            check=resultset.next();    	
-            details.add(resultset.getString("questid"));
-            details.add(resultset.getString("Question"));
-            details.add(resultset.getString("option1"));
-            details.add(resultset.getString("option2"));
-            details.add(resultset.getString("option3"));
-            details.add(resultset.getString("option4"));
-            details.add(resultset.getString("answer"));          
-		
+			check = resultset.next();
+			details.add(resultset.getString("questid"));
+			details.add(resultset.getString("Question"));
+			details.add(resultset.getString("option1"));
+			details.add(resultset.getString("option2"));
+			details.add(resultset.getString("option3"));
+			details.add(resultset.getString("option4"));
+			details.add(resultset.getString("answer"));
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			check = false;
@@ -64,7 +63,5 @@ public class FetchDAO {
 		return check;
 
 	}
-	
-	
 
 }

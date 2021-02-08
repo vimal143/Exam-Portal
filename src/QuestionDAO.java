@@ -1,4 +1,5 @@
 import java.sql.*;
+
 public class QuestionDAO {
 	private String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String dbUserName = "system";
@@ -24,6 +25,7 @@ public class QuestionDAO {
 		}
 		return con;
 	}
+
 	public String insertJava(AddQuestions addquestion) {
 		loadJDBCDriver(dbDriver);
 		Connection conn = getConnection();
@@ -32,8 +34,8 @@ public class QuestionDAO {
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, addquestion.getQuestionID());
-			ps.setString(2,addquestion.getQuestion() );
-			ps.setString(3,addquestion.getOption1() );
+			ps.setString(2, addquestion.getQuestion());
+			ps.setString(3, addquestion.getOption1());
 			ps.setString(4, addquestion.getOption2());
 			ps.setString(5, addquestion.getOption3());
 			ps.setString(6, addquestion.getOption4());
@@ -46,6 +48,7 @@ public class QuestionDAO {
 		}
 		return verify;
 	}
+
 	public String insertDBMS(AddQuestions addquestion) {
 		loadJDBCDriver(dbDriver);
 		Connection conn = getConnection();
@@ -54,8 +57,8 @@ public class QuestionDAO {
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, addquestion.getQuestionID());
-			ps.setString(2,addquestion.getQuestion() );
-			ps.setString(3,addquestion.getOption1() );
+			ps.setString(2, addquestion.getQuestion());
+			ps.setString(3, addquestion.getOption1());
 			ps.setString(4, addquestion.getOption2());
 			ps.setString(5, addquestion.getOption3());
 			ps.setString(6, addquestion.getOption4());
@@ -68,6 +71,7 @@ public class QuestionDAO {
 		}
 		return verify;
 	}
+
 	public String insertCN(AddQuestions addquestion) {
 		loadJDBCDriver(dbDriver);
 		Connection conn = getConnection();
@@ -76,8 +80,8 @@ public class QuestionDAO {
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, addquestion.getQuestionID());
-			ps.setString(2,addquestion.getQuestion() );
-			ps.setString(3,addquestion.getOption1() );
+			ps.setString(2, addquestion.getQuestion());
+			ps.setString(3, addquestion.getOption1());
 			ps.setString(4, addquestion.getOption2());
 			ps.setString(5, addquestion.getOption3());
 			ps.setString(6, addquestion.getOption4());
@@ -90,6 +94,7 @@ public class QuestionDAO {
 		}
 		return verify;
 	}
+
 	public String insertNM(AddQuestions addquestion) {
 		loadJDBCDriver(dbDriver);
 		Connection conn = getConnection();
@@ -98,8 +103,8 @@ public class QuestionDAO {
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, addquestion.getQuestionID());
-			ps.setString(2,addquestion.getQuestion() );
-			ps.setString(3,addquestion.getOption1() );
+			ps.setString(2, addquestion.getQuestion());
+			ps.setString(3, addquestion.getOption1());
 			ps.setString(4, addquestion.getOption2());
 			ps.setString(5, addquestion.getOption3());
 			ps.setString(6, addquestion.getOption4());

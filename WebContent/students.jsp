@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-   <%@page import="java.sql.*"%>
- <%@ page import="java.util.*" %>
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*"%>
+<%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,54 +16,55 @@
 <title>Students</title>
 </head>
 <body>
-<%@include file="navbar.jsp" %>
-<%
-response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+	<%@include file="navbar.jsp"%>
+	<%
+		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 
-//response.setHeader("pragma","no-cache");     //HTTP 1.0
-// response.setHeader("Expires","0")    //proxies
-String userID=(String)session.getAttribute("userid");
-if(userID==null){
-	response.sendRedirect("admin.jsp");
-}
-%>
-<%
+	//response.setHeader("pragma","no-cache");     //HTTP 1.0
+	// response.setHeader("Expires","0")    //proxies
+	String userID = (String) session.getAttribute("userid");
+	if (userID == null) {
+		response.sendRedirect("admin.jsp");
+	}
+	%>
+	<%
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+	try {
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "7388");
+		Statement st = conn.createStatement();
+		PreparedStatement ps = conn.prepareStatement("select * from examuser");
+		ResultSet resultset = ps.executeQuery();
+	%>
+	<div class="container mt-3">
+		<table class="table table-striped table-light mt-3">
+			<tr>
+				<th scope="col">First Name</th>
+				<th scope="col">Last Name</th>
+				<th scope="col">Email</th>
+				<th scope="col">Password</th>
+			</tr>
+			<%
+				while (resultset.next()) {
+			%>
+			<tr>
+				<td><%=resultset.getString("Fname")%></td>
+				<td><%=resultset.getString("Lname")%></td>
+				<td><%=resultset.getString("Email")%></td>
+				<td><%=resultset.getString("Password")%></td>
+			</tr>
 
-Class.forName("oracle.jdbc.driver.OracleDriver");
-try{
-Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","7388");
-Statement st=conn.createStatement();
-PreparedStatement ps=conn.prepareStatement("select * from examuser");
-ResultSet  resultset= ps.executeQuery();
-%>
-<div class="container mt-3">
-<table class="table table-striped table-light mt-3" >
-<tr>
-<th scope="col">First Name</th>
-<th scope="col">Last Name</th>
-<th scope="col">Email</th>
-<th scope="col">Password</th>
-</tr>
-<% 
-while(resultset.next()){
-%>	
-<tr>
-<td ><%=resultset.getString("Fname") %></td>
-<td ><%=resultset.getString("Lname") %></td>
-<td ><%=resultset.getString("Email") %></td>
-<td ><%=resultset.getString("Password") %></td>
-</tr>
-
-<% 
-}%>
-</table>
-</div>
-<%
-}catch(Exception  e){
+			<%
+				}
+			%>
+		</table>
+	</div>
+	<%
+		} catch (Exception e) {
 	out.println(e);
-} %>
+	}
+	%>
 
-<script
+	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 		crossorigin="anonymous"></script>

@@ -16,7 +16,7 @@
 <link href="style/admin.css" rel="stylesheet">
 <title>Axis Online Exam Portal</title>
 </head>
-<body >
+<body>
 	<!-- Image and text -->
 	<nav class="navbar navbar-light  border">
 		<div class="container-fluid">
@@ -27,14 +27,15 @@
 		</div>
 	</nav>
 	<!--Form Starts Here-->
-	<div class="container mt-5 bg-secondary w-50 border p-5 " align="center">
+	<div class="container mt-5 bg-secondary w-50 border p-5 "
+		align="center">
 		<fieldset>
 			<legend class="pt-3 pb-3 text-center">
 				<span class="h3 text-uppercase text-light">Admin Login</span>
-				
-				
+
+
 			</legend>
-			<span class="text-info">${message}</span>
+			<span class="text-color">${message}</span>
 		</fieldset>
 		<form action="adminlogin" method="post">
 			<div class="row mb-3 mt-3">
@@ -49,16 +50,16 @@
 					<input type="password" class="form-control"
 						placeholder="ENTER PASSWORD" name="admin_password" required>
 				</div>
-				</div>
-				<div class="row mb-3">
+			</div>
+			<div class="row mb-3">
 				<div class="col-sm-13  ">
-					<input type="submit" class="bg-primary form-control lgnbtn text-light"
-						value="SIGN IN">
+					<input type="submit"
+						class="bg-primary form-control lgnbtn text-light" value="SIGN IN">
 				</div>
-				</div>
+			</div>
 		</form>
 
-		
+
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

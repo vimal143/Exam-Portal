@@ -1,11 +1,11 @@
 
 public class QuestionBank {
-	private String examname,questID,question,option1,option2,option3,option4,answer;
+	private String examname, questID, question, option1, option2, option3, option4, answer;
 
-	public QuestionBank(String examname,String questID, String question, String option1, String option2, String option3, String option4,
-			String answer) {
+	public QuestionBank(String examname, String questID, String question, String option1, String option2,
+			String option3, String option4, String answer) {
 		super();
-		this.examname=examname;
+		this.examname = examname;
 		this.questID = questID;
 		this.question = question;
 		this.option1 = option1;
@@ -82,5 +82,5 @@ public class QuestionBank {
 	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
-	
+
 }

@@ -1,5 +1,6 @@
 import java.sql.*;
 import java.util.Vector;
+
 public class ScheduleCheckDAO {
 	Vector<String> details = new Vector<>();
 	private String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -35,20 +36,16 @@ public class ScheduleCheckDAO {
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, examID);
-		
+
 			ResultSet resultset = ps.executeQuery();
-            check=resultset.next();
-         
-            	
-            	details.add(resultset.getString("examid"));
-            	details.add(resultset.getString("examname"));
-            	details.add(resultset.getString("examdate"));
-            	details.add(resultset.getString("time"));
-            	details.add(resultset.getString("duration"));
-            	
-  
-            
-		
+			check = resultset.next();
+
+			details.add(resultset.getString("examid"));
+			details.add(resultset.getString("examname"));
+			details.add(resultset.getString("examdate"));
+			details.add(resultset.getString("time"));
+			details.add(resultset.getString("duration"));
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			check = false;
