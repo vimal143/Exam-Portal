@@ -49,6 +49,7 @@ form.addEventListener('submit', handleForm);
 </head>
 <body>
 	<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		String userID = (String) session.getAttribute("userid");
 	if (userID == null) {
 		response.sendRedirect("index.jsp");
@@ -58,8 +59,8 @@ form.addEventListener('submit', handleForm);
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-5 shadow bg-primary" style="height: 70px;">
-				<img src="assets/logo railway.jpg"
+			<div class="col-md-5 shadow bg-secondary" style="height: 70px;">
+				<img src="assets/axispng.png"
 					style="height: 70px; width: 550px; margin-left: -25px;">
 			</div>
 			<div class="col-md-7 bg-primary shadow" style="height: 70px;">

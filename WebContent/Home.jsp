@@ -36,10 +36,10 @@
 			<div class="rightside">
 				<h1>Axis Exam Portal</h1>
 				<p>Welcome to Axis Online Exam Portal</p>
-				<button>
-					<a href="index.jsp" style="text-decoration: none; color: white">Start
-						Exam</a>
-				</button>
+			<a href="index.jsp" style="text-decoration: none; color: white">	<button>
+					Start
+						Exam
+				</button></a>
 			</div>
 
 		</section>

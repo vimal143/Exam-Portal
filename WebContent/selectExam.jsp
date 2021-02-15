@@ -15,7 +15,9 @@
 <link href="style/index.css" rel="stylesheet">
 </head>
 <body>
+
 	<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		String userID = (String) session.getAttribute("userid");
 	if (userID == null) {
 		response.sendRedirect("index.jsp");

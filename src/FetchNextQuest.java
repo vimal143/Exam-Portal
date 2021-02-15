@@ -32,9 +32,21 @@ public class FetchNextQuest {
 		loadJDBCDriver(dbDriver);
 		// System.out.println(q); //Value is "Q2"
 		boolean check = false;
+		String sql="";
 		Connection conn = getConnection();
-
-		String sql = "Select * from system.javaquestions where QUESTID='" + q + "' ";
+        if(examname.equals("Java")) {
+        	sql = "Select * from system.javaquestions where QUESTID='" + q + "' ";
+        }
+        else if(examname.equals("DBMS")) {
+        	sql = "Select * from system.dbmsquestions where QUESTID='" + q + "' ";
+        }
+        else if(examname.equals("Computer Network")) {
+        	sql = "Select * from system.cnquestions where QUESTID='" + q + "' ";
+        }
+        else if(examname.equals("Numerical Methods")) {
+        	sql = "Select * from system.nmquestions where QUESTID='" + q + "' ";
+        }
+		
 		// String sql ="Select * from system.dbmsquestions where QUESTID='Q2'"; //This
 		// way its Working
 

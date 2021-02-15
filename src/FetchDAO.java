@@ -41,6 +41,11 @@ public class FetchDAO {
 			sql = "select * from system.javaquestions";
 		} else if (examname.equals("DBMS")) {
 			sql = "select * from system.dbmsquestions";
+		}else if (examname.equals("Computer Network")) {
+			sql = "select * from system.cnquestions";
+		}
+		else if (examname.equals("Numerical Methods")) {
+			sql = "select * from system.nmquestions";
 		}
 
 		try {

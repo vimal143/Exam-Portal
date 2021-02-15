@@ -17,7 +17,7 @@
 						Questions</a></li>
 				<li class="nav-item"><a class="nav-link" href="students.jsp">Students</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="Result.jsp">Result</a>
+				<li class="nav-item"><a class="nav-link" href="ResultAdmin.jsp">Result</a>
 				</li>
 			</ul>
 			<form action="logoutAdmin" class="d-flex" method="post">
