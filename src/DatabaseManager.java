@@ -28,16 +28,18 @@ public class DatabaseManager {
 
 	public String insert(Member member) {
 		loadJDBCDriver(dbDriver);
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
 		String verify = "DI";
 		String sql = "Insert into system.examuser values(?,?,?,?)";
 		try {
+			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, member.getFirstName());
 			ps.setString(2, member.getLastName());
 			ps.setString(3, member.getEmail());
 			ps.setString(4, member.getPassword());
 			ps.executeUpdate();
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

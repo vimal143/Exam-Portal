@@ -46,10 +46,10 @@ body {
 					<select name="examName" class="form-select"
 						aria-label="Default select example" required>
 						<option selected>Choose Exam</option>
-						<option value="java">Java</option>
-						<option value="dbms">DBMS</option>
-						<option value="computerNetwork">Computer Network</option>
-						<option value="numericalMethods">Numerical Methods</option>
+						<option value="Java">Java</option>
+						<option value="DBMS">DBMS</option>
+						<option value="Computer Network">Computer Network</option>
+						<option value="Numerical Methods">Numerical Methods</option>
 					</select>
 				</div>
 				<div class="col-md-6">

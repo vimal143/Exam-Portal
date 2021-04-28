@@ -28,10 +28,11 @@ public class QuestionDAO {
 
 	public String insertJava(AddQuestions addquestion) {
 		loadJDBCDriver(dbDriver);
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
 		String verify = "DI";
 		String sql = "Insert into system.JavaQuestions values(?,?,?,?,?,?,?)";
 		try {
+			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, addquestion.getQuestionID());
 			ps.setString(2, addquestion.getQuestion());
@@ -41,6 +42,7 @@ public class QuestionDAO {
 			ps.setString(6, addquestion.getOption4());
 			ps.setString(7, addquestion.getAnswer());
 			ps.executeUpdate();
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,10 +53,11 @@ public class QuestionDAO {
 
 	public String insertDBMS(AddQuestions addquestion) {
 		loadJDBCDriver(dbDriver);
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
 		String verify = "DI";
 		String sql = "Insert into system.dbmsquestions values(?,?,?,?,?,?,?)";
 		try {
+			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, addquestion.getQuestionID());
 			ps.setString(2, addquestion.getQuestion());
@@ -64,6 +67,7 @@ public class QuestionDAO {
 			ps.setString(6, addquestion.getOption4());
 			ps.setString(7, addquestion.getAnswer());
 			ps.executeUpdate();
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -74,10 +78,11 @@ public class QuestionDAO {
 
 	public String insertCN(AddQuestions addquestion) {
 		loadJDBCDriver(dbDriver);
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
 		String verify = "DI";
 		String sql = "Insert into system.CNQuestions values(?,?,?,?,?,?,?)";
 		try {
+			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, addquestion.getQuestionID());
 			ps.setString(2, addquestion.getQuestion());
@@ -87,6 +92,7 @@ public class QuestionDAO {
 			ps.setString(6, addquestion.getOption4());
 			ps.setString(7, addquestion.getAnswer());
 			ps.executeUpdate();
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -97,10 +103,11 @@ public class QuestionDAO {
 
 	public String insertNM(AddQuestions addquestion) {
 		loadJDBCDriver(dbDriver);
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
 		String verify = "DI";
 		String sql = "Insert into system.NMQuestions values(?,?,?,?,?,?,?)";
 		try {
+			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, addquestion.getQuestionID());
 			ps.setString(2, addquestion.getQuestion());
@@ -110,6 +117,7 @@ public class QuestionDAO {
 			ps.setString(6, addquestion.getOption4());
 			ps.setString(7, addquestion.getAnswer());
 			ps.executeUpdate();
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

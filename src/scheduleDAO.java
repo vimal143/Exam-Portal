@@ -31,10 +31,11 @@ public class scheduleDAO {
 
 	public String insert(String examID, String examName, String examDate, String examTime, String examDuration) {
 		loadJDBCDriver(dbDriver);
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
 		String verify = "DI";
 		String sql = "Insert into system.schedule values(?,?,?,?,?)";
 		try {
+			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, examID);
 			ps.setString(2, examName);
@@ -42,6 +43,7 @@ public class scheduleDAO {
 			ps.setString(4, examTime);
 			ps.setString(5, examDuration);
 			ps.executeUpdate();
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

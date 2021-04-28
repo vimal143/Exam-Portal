@@ -31,9 +31,10 @@ public class ScheduleCheckDAO {
 	public boolean fetchdata(String examID) {
 		loadJDBCDriver(dbDriver);
 		boolean check = false;
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
 		String sql = "select * from system.schedule where examid=?";
 		try {
+			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, examID);
 
@@ -45,6 +46,7 @@ public class ScheduleCheckDAO {
 			details.add(resultset.getString("examdate"));
 			details.add(resultset.getString("time"));
 			details.add(resultset.getString("duration"));
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

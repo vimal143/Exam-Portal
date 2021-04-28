@@ -30,15 +30,17 @@ public class Result {
 		loadJDBCDriver(dbDriver);
 		String sql = "";
 		boolean check = false;
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
 		sql = "Insert into system.examresult values(?,?,?)";
 		try {
+			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, userid);
 			ps.setString(2, examname);
 			ps.setInt(3, marks);
 			ResultSet resultset = ps.executeQuery();
 			check = resultset.next();
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

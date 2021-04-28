@@ -21,7 +21,7 @@
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 	String userID = (String) session.getAttribute("userid");
 	if (userID == null) {
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("admin.jsp");
 	}
 	%>
 	

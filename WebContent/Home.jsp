@@ -90,10 +90,10 @@
 								<h5>Vimal Pandey</h5>
 								<p>Developer</p>
 								<div class="social-media">
-									<a href=#><span class="fa fa-facebook"></span></a> <a href=#><span
-										class="fa fa-linkedin"></span></a> <a href=#><span
-										class="fa fa-instagram"></span></a> <a href=#><span
-										class="fa fa-twitter"></span></a>
+									<a href="https://www.facebook.com/vimal7388" target="_blank"><span class="fa fa-facebook"></span>
+									</a> <a href="https://www.linkedin.com/in/vimal-pandey-450b43186" target="_blank"><span class="fa fa-linkedin"></span>
+									</a> <a href="https://www.instagram.com/__vimal_pandey__" target="_blank" ><span class="fa fa-instagram"></span>
+										</a> <a href="https://www.twitter.com/jrspvimal" target="_blank"><span class="fa fa-twitter"></span></a>
 								</div>
 							</div>
 						</div>
@@ -153,7 +153,7 @@
 
 	<section class="contact" id="contact">
 
-		<div class="col-lg-12 col-md-12" ng-app=""
+		<div  ng-app=""
 			ng-init="firstName='Vimal';
          lastName='Pandey';
          place='India';
@@ -180,6 +180,7 @@
 							<textarea class=" inputs-m" rows="20" id="message"
 								ng-model="message"></textarea>
 							<input type="submit" class="btn-send" value="Send">
+							
 					</form>
 				</div>
 			</div>
@@ -188,8 +189,7 @@
 					<div class="paper">
 						<div class="lines">
 							<div class="Lettertext" spellcheck="false">
-								Hello Developers <br /> <br /> This is {{ firstName+"
-								"+lastName }}. I am from {{place}}. <br /> <br /> I am a
+								Hello Developers <br /> <br /> This is {{firstName}} . I am from {{place}}. <br /> <br /> I am a
 								{{profession}},. <br /> <br /> {{message}} <br /> <br /> You
 								can reach me back on {{email}}.<br /> Thank you
 								&#9829;&#9829;&#9829; <br /> <br /> <br /> Thanks and
@@ -222,7 +222,7 @@
 			<ul class="socials">
 				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				
 				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
 				<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
 			</ul>

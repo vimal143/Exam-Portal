@@ -33,7 +33,7 @@ public class FetchNextQuest {
 		// System.out.println(q); //Value is "Q2"
 		boolean check = false;
 		String sql="";
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
         if(examname.equals("Java")) {
         	sql = "Select * from system.javaquestions where QUESTID='" + q + "' ";
         }
@@ -51,7 +51,7 @@ public class FetchNextQuest {
 		// way its Working
 
 		try {
-
+           Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet resultset = ps.executeQuery();
 			check = resultset.next();
@@ -63,6 +63,7 @@ public class FetchNextQuest {
 			nextquestion.add(resultset.getString("option3"));
 			nextquestion.add(resultset.getString("option4"));
 			nextquestion.add(resultset.getString("answer"));
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

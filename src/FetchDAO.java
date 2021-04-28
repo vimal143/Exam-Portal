@@ -36,7 +36,7 @@ public class FetchDAO {
 		loadJDBCDriver(dbDriver);
 		String sql = "";
 		boolean check = false;
-		Connection conn = getConnection();
+//		Connection conn = getConnection();
 		if (examname.equals("Java")) {
 			sql = "select * from system.javaquestions";
 		} else if (examname.equals("DBMS")) {
@@ -49,6 +49,7 @@ public class FetchDAO {
 		}
 
 		try {
+			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet resultset = ps.executeQuery();
 			check = resultset.next();
@@ -59,6 +60,7 @@ public class FetchDAO {
 			details.add(resultset.getString("option3"));
 			details.add(resultset.getString("option4"));
 			details.add(resultset.getString("answer"));
+			conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
