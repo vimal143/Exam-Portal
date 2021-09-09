@@ -24,8 +24,11 @@
 				<ul>
 					<li><a href="#">Home</a></li>
 					<li><a href="#About">About</a></li>
+					<li><a href="http://localhost:8081/ExamPortal/UpcomingExams.jsp">Exam Schedule</a></li>
 					<li><a href="#team">Team</a></li>
 					<li><a href="#contact">Contact</a></li>
+					<li><a href="http://localhost:8081/ExamPortal/admin.jsp">Admin Login</a></li>
+					
 				</ul>
 			</div>
 		</nav>

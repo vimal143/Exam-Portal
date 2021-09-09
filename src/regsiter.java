@@ -50,7 +50,8 @@ public class regsiter extends HttpServlet {
 		if (val) {
 			Member member = new Member(firstName, lastName, email, password1);
 			DatabaseManager dbmanager = new DatabaseManager();
-			dbmanager.insert(member);
+			String sm=dbmanager.insert(member);
+			System.out.println(sm);
 			String msg = "You are Regsitered successfully. Login to Continue ";
 			request.setAttribute("message", msg);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);

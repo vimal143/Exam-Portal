@@ -34,12 +34,11 @@ public class loginManager {
 		loadJDBCDriver(dbDriver);
 		boolean check = false;
 //		Connection conn = getConnection();
-		String sql = "select email,password from system.examuser where email=? and password=?";
+		String sql = "select email,password from system.examuser where email='" + email + "' and password='" + pass + "' ";
 		try {
 			Connection conn = DriverManager.getConnection(dbUrl, dbUserName, dbPassword);
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, email);
-			ps.setString(2, pass);
+			
 			ResultSet resultset = ps.executeQuery();
 			check = resultset.next();
 			conn.close();

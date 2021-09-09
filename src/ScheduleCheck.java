@@ -74,15 +74,16 @@ public class ScheduleCheck extends HttpServlet {
 		if (verify) {
 
 			if (stringDate.equals(exdatenow) && Am_PM[1].equals(Scheduled_Am_PM[1])
-					&& (Integer.parseInt(stringtime[0]) >= Integer.parseInt(Scheduledtime[0]))) {
+					&& (Integer.parseInt(stringtime[0]) >= Integer.parseInt(Scheduledtime[0]))
+					&& (Integer.parseInt(stringtime[0]) <Integer.parseInt(Scheduledtime[0]+1))) {
 				request.setAttribute("details", sd);
 				request.getRequestDispatcher("/welcome.jsp").forward(request, response);
 			} else {
-				request.setAttribute("message", "Something Went Wrong !");
+				request.setAttribute("message", "Something Went Wrong ! Check Your Exam ID and Date Time");
 				request.getRequestDispatcher("/ScheduleError.jsp").forward(request, response);
 			}
 		} else {
-			request.setAttribute("message", "Something Went Wrong !");
+			request.setAttribute("message", "Something Went Wrong ! Check Your Exam ID and Date Time");
 			request.getRequestDispatcher("/selectExam.jsp").forward(request, response);
 		}
 
